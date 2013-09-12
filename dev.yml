@@ -16,13 +16,13 @@ root: ~/
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
-  - chroot: ssh -t -X jtrindade@tagus.inesc-id.pt schroot -c hardy_amd64 -u jtrindade
+  - chroot: mosh -t -X jtrindade@tagus.inesc-id.pt schroot -c hardy_amd64 -u jtrindade
   - tagus_qualnet:
        # layout: main-vertical
        layout: 722a,205x58,0,0{126x58,0,0,2,78x58,127,0,6}
        panes:
-           - ssh -t -X jtrindade@tagus.inesc-id.pt "cd workspace/qualnet_map_creator/src; vim; zsh -i"
-           - ssh -t -X jtrindade@tagus.inesc-id.pt schroot -c hardy_amd64 -u jtrindade
-  - tagus_sim: ssh -t -X jtrindade@tagus.inesc-id.pt "cd  workspace/simulator/qualnet/5.0; vim; zsh -i"
+           - mosh -t -X jtrindade@tagus.inesc-id.pt "cd workspace/qualnet_map_creator/src; vim; zsh -i"
+           - mosh -t -X jtrindade@tagus.inesc-id.pt schroot -c hardy_amd64 -u jtrindade
+  - tagus_sim: mosh -t -X jtrindade@tagus.inesc-id.pt "cd workspace/simulator/qualnet/5.0; vim; zsh -i"
   - phd: cd /home/workspace/phd/
   - spare: #empty
